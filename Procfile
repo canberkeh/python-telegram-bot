@@ -1,1 +1,1 @@
-heroku buildpacks:set heroku/python
+web: python python-telegram.py
