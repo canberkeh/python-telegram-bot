@@ -1,3 +1,2 @@
 gunicorn
-logging
 python-telegram-bot
