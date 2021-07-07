@@ -1,6 +1,8 @@
 import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, commandhandler
+import os
+PORT = int(os.environ.get('PORT', 5000))
     
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -69,7 +71,11 @@ def main():
     dp.add_error_handler(error)
 
     # Start the Bot
-    updater.start_polling()
+    # Start the Bot
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=token)
+    updater.bot.setWebhook('https://rylai-bot-python.herokuapp.com/' + token)
 
 
     myuser_id = '885261354'
