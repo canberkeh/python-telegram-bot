@@ -1,7 +1,6 @@
 import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, commandhandler
-import os
 
     
 # Enable logging
