@@ -2,7 +2,7 @@ import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, commandhandler
 import os
-PORT = int(os.environ.get('PORT', 80))
+PORT = int(os.environ.get('PORT', 8443))
     
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -75,7 +75,6 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=token)
-    updater.bot.setWebhook('https://rylai-bot-python.herokuapp.com/' + token)
 
 
     myuser_id = '885261354'
