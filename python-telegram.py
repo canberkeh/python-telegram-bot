@@ -2,7 +2,7 @@ import telegram
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, commandhandler
 import os
-PORT = int(os.environ.get('PORT', 8443))
+PORT = int(os.environ.get('PORT', 443))
     
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -74,9 +74,9 @@ def main():
     # Start the Bot
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=token)
+                          url_path=token,
+                          webhook_url='https://whispering-gorge-48825.herokuapp.com/' + token)
                           
-    updater.bot.setWebhook(webhook_url='https://whispering-gorge-48825.herokuapp.com/' + token)
 
     myuser_id = '885261354'
 
