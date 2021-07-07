@@ -74,7 +74,8 @@ def main():
     # Start the Bot
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
-                          url_path=token)
+                          url_path=token,
+                          webhook_url='https://whispering-gorge-48825.herokuapp.com/' + token)
 
 
     myuser_id = '885261354'
